@@ -24,5 +24,4 @@ function numberOfOccurrencesInText(word, text) {
     }
   });
   return wordCount;
-  e
 }
