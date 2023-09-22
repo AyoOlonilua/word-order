@@ -10,24 +10,23 @@
     <title>Text Analyzer</title>
 </head>
 <body>
-    <div class="container">
-        <h2>Text Analyzer</h2>
+    <section class="container p-3 mt-5 w-50">
       <form id="word-counter">
-        <div class="form-group">
-          <p>Input a text passage to get a total word count:</p>
-          <textarea id="text-passage" name="text-passage" class="form-control"></textarea>
-          <p>Optionally enter a word to count the number of times it occurs in the passage:</p>
-          <input type="text" id="word" name="word" class="form-control">
-          <br>
-          <button type="submit" class="btn btn-success">Submit Survey</button>
-        </div>
+          <div class="form-group container">
+              <h2>Word Order</h2>
+              <p>Input a text passage to get a total word count:</p>
+              <textarea id="text-passage" name="text-passage" class="form-control border border-primary" placeholder="Enter a block of text"></textarea>
+          </div>
+          
+          <button type="submit" class="ml-3 btn mt-4 p-2 text-white border border-white bg-dark font-weight-bold">Submit Survey
+          </button>
       </form>
-      <p>Total Word Count: <span id="total-count"></span></p>
-      <br>
-      
-      <p>Selected Word Count: <span id="selected-count"></span></p>
-      <span id="bolded-passage"></span>
-    </div>
+
+      <div class="p-3 mt-4">
+          <p>Total Word Count: <span id="total-count"></span></p>
+          <p>Total Word Frequency: <span id="word-list"></span></p>
+      </div>
+  </section>
     
 </body>
 </html>
