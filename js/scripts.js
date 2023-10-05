@@ -26,16 +26,22 @@ function numberOfOccurrencesInText(text) {
       const word = element.toLowerCase();
 
     if (word.trim() !== "") {
-      if (wordOrder[word]) {
-          wordOrder[word]++;
+      if (wordOrder[element]) {
+          wordOrder[element]++;
       } else {
-          wordOrder[word] = 1;
+          wordOrder[element] = 1;
       }
     }
   });
   return wordOrder;
 }
 
+function appendMostCommonWords(words) {
+  $("#word-list").empty();
+  words.forEach(function(element) {
+        $("#word-list").append("<li>" + element.word + ": " + element.count + "</li>");
+  });
+}
 // UI Logic
 
 $(document).ready(function(){
@@ -45,14 +51,8 @@ $(document).ready(function(){
     const passage = $("#text-passage").val();
     const wordCount = wordCounter(passage);
     const wordFrequency = numberOfOccurrencesInText(passage);
-
-    for (const word in wordFrequency) {
-       wordFrequency.hasOwnProperty(word) 
-       const count = wordFrequency[word];
-        $("#word-list").append("<li>" + word + ": " + count + "</li>");
-      
-    }
-  
+    
+    appendMostCommonWords(Object.entries(wordFrequency).map(([word, count]) => ({ word, count })));
   $("#total-count").html(wordCount);
   });
 });
