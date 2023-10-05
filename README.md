@@ -15,7 +15,7 @@ By AYO-OLONILUA AYOMIPE
 
 # Description
 
-It is used to independently classify, sort, and extract information from text to identify patterns, relationships, sentiments, and other actionable knowledge.
+It is used to count the number of word inputed and how many times a particular word appeared in a passage.
 
 # Setup/Installation Requirements
 
